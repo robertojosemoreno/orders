@@ -2,7 +2,6 @@ GET http://localhost:8080/orders
 Accept: application/json
 
 ###
-
 GET http://localhost:8080/orders/1
 Accept: application/json
 
@@ -12,6 +11,27 @@ Content-Type: application/json
 
 {
   "status" : "created",
-  "numProducts" : 6,
-  "amount": 50
+  "numProducts" : 5,
+  "amount": 84.25
 }
+
+###
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "status" : "created",
+  "numProducts" : 10,
+  "amount": 345.52
+}
+
+###
+PUT http://localhost:8080/orders/2
+Content-Type: application/json
+
+{
+"status" : "approved",
+"numProducts" : 10,
+"amount": 345.52
+}
+

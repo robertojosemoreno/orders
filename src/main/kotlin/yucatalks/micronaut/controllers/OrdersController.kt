@@ -13,13 +13,14 @@ class OrdersController {
     lateinit var ordersService: OrdersService
 
     @Get
-    fun listAll(): List<Order> = ordersService.listAll();
+    fun listAll(): List<Order> = ordersService.listAll()
 
     @Get("/{id}")
     fun getOrderById(id: Long): Optional<Order> = ordersService.findById(id)
 
-    @Put
-    fun update(@Body order: Order): HttpResponse<Order> {
+    @Put("/{id}")
+    fun update(id: Long, @Body order: Order): HttpResponse<Order> {
+        order.id = id
         return HttpResponse.ok(ordersService.update(order))
     }
 
