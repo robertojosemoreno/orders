@@ -1,0 +1,17 @@
+GET http://localhost:8080/orders
+Accept: application/json
+
+###
+
+GET http://localhost:8080/orders/1
+Accept: application/json
+
+###
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "status" : "created",
+  "numProducts" : 6,
+  "amount": 50
+}
